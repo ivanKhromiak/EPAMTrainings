@@ -16,7 +16,7 @@ namespace Task1
 
         public Rectangle(int leftUpperX, int leftUpperY, int rightLowerX, int rightLowerY)
         {
-            int length = leftUpperX - rightLowerX;
+            int length = rightLowerX - leftUpperX;
             int width = leftUpperY - rightLowerY;
             Perimeter = CalcPerimeter(length, width);
             Area = CalcArea(length, width);

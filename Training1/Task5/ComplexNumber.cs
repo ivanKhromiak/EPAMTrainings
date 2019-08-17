@@ -13,6 +13,13 @@ namespace Task5
         public double ImaginaryPart { get; private set; }
         #endregion
 
+        #region Methods
+        public override string ToString()
+        {
+            return $"{RealPart} + {ImaginaryPart}i";
+        }
+        #endregion
+
         #region Constructors
         public ComplexNumber(double realNumber, double imaginaryNumber)
         {

@@ -17,7 +17,7 @@ namespace Task4
         }
         public static int Area(int leftUpperX, int leftUpperY, int rightLowerX, int rightLowerY)
         {
-            int length = leftUpperX - rightLowerX;
+            int length = rightLowerX - leftUpperX;
             int width = leftUpperY - rightLowerY;
             int area = length * width;
             return area;

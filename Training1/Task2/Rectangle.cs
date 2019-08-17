@@ -22,7 +22,7 @@ namespace Task2
 
         public Rectangle(int leftUpperX, int leftUpperY, int rightLowerX, int rightLowerY)
         {
-            int length = leftUpperX - rightLowerX;
+            int length = rightLowerX - leftUpperX;
             int width = leftUpperY - rightLowerY;
         }
     }

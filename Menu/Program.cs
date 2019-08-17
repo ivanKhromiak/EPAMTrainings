@@ -14,18 +14,22 @@ namespace Menu
             while (true)
             {
                 Console.WriteLine("Enter the number of training you want to test or zero to exit:");
-                int.TryParse(Console.ReadLine(), out choice);
+                if(!int.TryParse(Console.ReadLine(), out choice))
+                {
+                    Console.WriteLine("Invalid input, try agian");
+                    continue;
+                }
                 switch (choice)
                 {
                     case 1:
-
+                        DoTraining1.ChooseTask();
                         break;
                     case 2:
                         break;
                     case 0:
                         return;
                     default:
-                        Console.WriteLine("Invalid input");
+                        Console.WriteLine("No such training, try again");
                         break;
                 }
             }
