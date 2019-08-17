@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Training1.Task4
+namespace Task4
 {
-    static class Regtangle
+    public static class Regtangle
     {
         public static int Perimeter(int leftUpperX, int leftUpperY, int rightLowerX, int rightLowerY)
         {

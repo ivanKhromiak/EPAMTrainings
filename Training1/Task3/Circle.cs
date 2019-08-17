@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Training1.Task3
+namespace Task3
 {
-    class Circle
+    public class Circle
     {
         private const double PI = 3.14;
         public double Circumference { get; private set; }

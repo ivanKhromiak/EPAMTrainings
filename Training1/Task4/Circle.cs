@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Training1.Task4
+namespace Task4
 {
 
-    static class Circle
+    public static class Circle
     {
         public static double Circumference(double radius)
         {

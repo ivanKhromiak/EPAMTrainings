@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Training1.Task1
+namespace Task1
 {
-    class Rectangle
+    public class Rectangle
     {
         public int Perimeter { get; private set; }
         public int Area { get; private set; }

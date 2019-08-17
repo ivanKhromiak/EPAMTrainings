@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Training1.Task5
+namespace Task5
 {
-    class ComplexNumber
+    public class ComplexNumber
     {
         #region Properties
         public double RealPart { get; private set; }
