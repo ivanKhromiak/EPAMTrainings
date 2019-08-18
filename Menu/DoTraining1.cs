@@ -51,14 +51,27 @@ namespace Menu
             int upperLeftY;
             int lowerRightX;
             int lowerRightY;
-            Console.WriteLine("Enter X coordinate of upper-left corner");
-            upperLeftX = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y coordinate of upper-left corner");
-            upperLeftY = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter X coordinate of lower-right corner");
-            lowerRightX = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y coordinate of lower-right corner");
-            lowerRightY = int.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter X coordinate of upper-left corner");
+                upperLeftX = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Y coordinate of upper-left corner");
+                upperLeftY = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter X coordinate of lower-right corner");
+                lowerRightX = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Y coordinate of lower-right corner");
+                lowerRightY = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input");
+                return;
+            }
+            if (!Training1.Validation.ValidateRectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY))
+            {
+                Console.WriteLine("Invalid data");
+                return;
+            }
             var rectangle = new Training1.Task1.Rectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY);
             Console.WriteLine($"The perimeter of regtangle {rectangle.Perimeter}");
             Console.WriteLine($"The area of regtangle {rectangle.Area}");
@@ -69,23 +82,45 @@ namespace Menu
             int upperLeftY;
             int lowerRightX;
             int lowerRightY;
-            Console.WriteLine("Enter X coordinate of upper-left corner");
-            upperLeftX = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y coordinate of upper-left corner");
-            upperLeftY = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter X coordinate of lower-right corner");
-            lowerRightX = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y coordinate of lower-right corner");
-            lowerRightY = int.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter X coordinate of upper-left corner");
+                upperLeftX = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Y coordinate of upper-left corner");
+                upperLeftY = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter X coordinate of lower-right corner");
+                lowerRightX = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Y coordinate of lower-right corner");
+                lowerRightY = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input;");
+                return;
+            }
+            if (!Training1.Validation.ValidateRectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY))
+            {
+                Console.WriteLine("Invalid data");
+                return;
+            }
             var rectangle = new Training1.Task2.Rectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY);
             Console.WriteLine($"The perimeter of regtangle {rectangle.Perimeter}");
             Console.WriteLine($"The area of regtangle {rectangle.Area}");
         }
         static private void DoTask3()
         {
-            int radius;
+            double radius;
             Console.WriteLine("Enter radius of circle:");
-            radius = int.Parse(Console.ReadLine());
+            if (!double.TryParse(Console.ReadLine(), out radius))
+            {
+                Console.WriteLine("Invalid input");
+                return;
+            }
+            if (!Training1.Validation.ValidateCircle(radius))
+            {
+                Console.WriteLine("Invalid data");
+                return;
+            }
             var circle1 = new Training1.Task3.Circle(radius);
             Console.WriteLine($"The Circumference of circle is {circle1.Circumference}");
             Console.WriteLine($"The Area of circle is {circle1.Area}");
@@ -96,21 +131,48 @@ namespace Menu
             int upperLeftY;
             int lowerRightX;
             int lowerRightY;
-            int radius;
-            Console.WriteLine("Enter X coordinate of upper-left corner");
-            upperLeftX = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y coordinate of upper-left corner");
-            upperLeftY = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter X coordinate of lower-right corner");
-            lowerRightX = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Y coordinate of lower-right corner");
-            lowerRightY = int.Parse(Console.ReadLine());
-            Training1.Task4.Regtangle.Perimeter(upperLeftX, upperLeftY, lowerRightX, lowerRightY);
-            Training1.Task4.Regtangle.Area(upperLeftX, upperLeftY, lowerRightX, lowerRightY);
+            try
+            {
+                Console.WriteLine("Enter X coordinate of upper-left corner");
+                upperLeftX = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Y coordinate of upper-left corner");
+                upperLeftY = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter X coordinate of lower-right corner");
+                lowerRightX = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Y coordinate of lower-right corner");
+                lowerRightY = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input;");
+                return;
+            }
+            if (!Training1.Validation.ValidateRectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY))
+            {
+                Console.WriteLine("Invalid data");
+                return;
+            }
+            Console.WriteLine("The perimeter of rectangle is: " +
+                $"{Training1.Task4.Regtangle.Perimeter(upperLeftX, upperLeftY, lowerRightX, lowerRightY)}");
+            Console.WriteLine("The area of rectangle is: " +
+                $"{Training1.Task4.Regtangle.Area(upperLeftX, upperLeftY, lowerRightX, lowerRightY)}");
+
+            double radius;
             Console.WriteLine("Enter radius of circle:");
-            int.TryParse(Console.ReadLine(), out radius);
-            Training1.Task4.Circle.Circumference(radius);
-            Training1.Task4.Circle.Area(radius);
+            if (!double.TryParse(Console.ReadLine(), out radius))
+            {
+                Console.WriteLine("Invalid input");
+                return;
+            }
+            if (!Training1.Validation.ValidateCircle(radius))
+            {
+                Console.WriteLine("Invalid data");
+                return;
+            }
+            Console.WriteLine("The perimeter of rectangle is: " +
+                $"{Training1.Task4.Circle.Circumference(radius)}");
+            Console.WriteLine("The area of rectangle is: " +
+                $"{Training1.Task4.Circle.Area(radius)}");
         }
         static private void DoTask5()
         {
@@ -118,14 +180,22 @@ namespace Menu
             double firstImanginaryNumber;
             double secondRealNumber;
             double seconImaginaryNumber;
-            Console.WriteLine("Enter a real part of first complex number:");
-            firstRealNumnber = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter a imaginary part of first complex number:");
-            firstImanginaryNumber = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter a real part of second complex number:");
-            secondRealNumber = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter a imaginary part of second complex number:");
-            seconImaginaryNumber = double.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter a real part of first complex number:");
+                firstRealNumnber = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter a imaginary part of first complex number:");
+                firstImanginaryNumber = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter a real part of second complex number:");
+                secondRealNumber = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter a imaginary part of second complex number:");
+                seconImaginaryNumber = double.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input;");
+                return;
+            }
             var firstComplexNumber = new Training1.Task5.ComplexNumber(firstRealNumnber, firstImanginaryNumber);
             var secondComplexNumber = new Training1.Task5.ComplexNumber(secondRealNumber, seconImaginaryNumber);
             Training1.Task5.ComplexNumber result = firstComplexNumber * secondComplexNumber;

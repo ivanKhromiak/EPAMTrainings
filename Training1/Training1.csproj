@@ -48,6 +48,7 @@
     <Compile Include="Task4\Circle.cs" />
     <Compile Include="Task4\Rectangle.cs" />
     <Compile Include="Task5\ComplexNumber.cs" />
+    <Compile Include="Validation.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
