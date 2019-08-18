@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Training2.Task4
 {
-    interface IDrawable
+    public interface IDrawable
     {
         void Draw();
     }

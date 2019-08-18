@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Training2.Task1
 {
-    class Square: Figure
+    public class Square: Figure
     {
-        public override void Draw() => Console.WriteLine("Square");
+        public override void Draw() => Console.WriteLine(this.GetType().Name);
     }
 }

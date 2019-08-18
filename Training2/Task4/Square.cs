@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Training2.Task4
 {
-    class Square: Figure, IDrawable
+    public class Square: Figure, IDrawable
     {
-        public override void Draw() => Console.WriteLine("Square");
+        public override void Draw() => Console.WriteLine(this.GetType().Name);
         public Square(int x, int y) : base(x, y) { }
     }
 }

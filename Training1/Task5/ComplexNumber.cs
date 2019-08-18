@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task5
+namespace Training1.Task5
 {
     public class ComplexNumber
     {
@@ -40,17 +40,20 @@ namespace Task5
             return new ComplexNumber(realNumber, imaginaryNumber);
         }
 
-        public static ComplexNumber operator / (ComplexNumber multiplicand, ComplexNumber multiplier)
+        public static ComplexNumber operator / (ComplexNumber dividend, ComplexNumber divisor)
         {
-            double denominator = (multiplier.RealPart * multiplier.RealPart) 
-            + (multiplier.ImaginaryPart * multiplier.ImaginaryPart);
+            if (divisor.RealPart == 0.0 && divisor.ImaginaryPart == 0.0)
+                throw new DivideByZeroException();
 
-            double realNumber = (multiplicand.RealPart * multiplier.RealPart
-            + multiplicand.ImaginaryPart * multiplier.ImaginaryPart)
+            double denominator = (divisor.RealPart * divisor.RealPart) 
+            + (divisor.ImaginaryPart * divisor.ImaginaryPart);
+
+            double realNumber = (dividend.RealPart * divisor.RealPart
+            + dividend.ImaginaryPart * divisor.ImaginaryPart)
             / denominator;
 
-            double imaginaryNumber = (multiplicand.ImaginaryPart * multiplier.RealPart
-            - multiplicand.RealPart * multiplier.ImaginaryPart)
+            double imaginaryNumber = (dividend.ImaginaryPart * divisor.RealPart
+            - dividend.RealPart * divisor.ImaginaryPart)
             / denominator;
 
             return new ComplexNumber(realNumber, imaginaryNumber);

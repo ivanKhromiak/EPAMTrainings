@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Training2.Task3
 {
-    class Figure
+    public class Figure
     {
-        public virtual void Draw() => Console.WriteLine("Figure");
+        public virtual void Draw() => Console.WriteLine(this.GetType().Name);
         public int X{ get; }
         public int Y{ get; }
         public Figure(int x, int y)

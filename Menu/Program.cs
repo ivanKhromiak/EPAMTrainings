@@ -25,6 +25,7 @@ namespace Menu
                         DoTraining1.ChooseTask();
                         break;
                     case 2:
+                        DoTraining2.ChooseTask();
                         break;
                     case 0:
                         return;

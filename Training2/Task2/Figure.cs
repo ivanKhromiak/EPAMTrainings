@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Training2.Task2
 {
-    abstract class Figure
+    public abstract class Figure
     {
         public abstract void Draw();
         public int X{ get; }

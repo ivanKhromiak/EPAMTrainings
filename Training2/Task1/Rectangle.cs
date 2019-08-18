@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Training2.Task1
 {
-    class Rectangle: Figure
+    public class Rectangle: Figure
     {
-        public override void Draw() => Console.WriteLine("Rectangle");
+        public override void Draw() => Console.WriteLine(this.GetType().Name);
     }
 }

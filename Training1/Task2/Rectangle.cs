@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task2
+namespace Training1.Task2
 {
     public class Rectangle
     {
-        private int lenght;
+        private int length;
         private int width;
 
         public int Perimeter
         {
-            get { return (2 * lenght) + (2 * width); }
+            get { return (2 * length) + (2 * width); }
         }
         public int Area
         {
-            get { return lenght * width; }
+            get { return length * width; }
         }
 
         public Rectangle(int leftUpperX, int leftUpperY, int rightLowerX, int rightLowerY)
         {
-            int length = rightLowerX - leftUpperX;
-            int width = leftUpperY - rightLowerY;
+            length = rightLowerX - leftUpperX;
+            width = leftUpperY - rightLowerY;
         }
     }
 }
