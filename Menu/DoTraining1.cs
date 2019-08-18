@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Menu
 {
-    static class DoTraining1
+    internal static class DoTraining1
     {
         public static void ChooseTask()
         {
@@ -19,6 +19,7 @@ namespace Menu
                     Console.WriteLine("Invalid input, try agian");
                     continue;
                 }
+
                 switch (choice)
                 {
                     case 1:
@@ -45,7 +46,7 @@ namespace Menu
             }
         }
 
-        static private void DoTask1()
+        private static void DoTask1()
         {
             int upperLeftX;
             int upperLeftY;
@@ -67,16 +68,19 @@ namespace Menu
                 Console.WriteLine("Invalid input");
                 return;
             }
+
             if (!Training1.Validation.ValidateRectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY))
             {
                 Console.WriteLine("Invalid data");
                 return;
             }
+
             var rectangle = new Training1.Task1.Rectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY);
             Console.WriteLine($"The perimeter of regtangle {rectangle.Perimeter}");
             Console.WriteLine($"The area of regtangle {rectangle.Area}");
         }
-        static private void DoTask2()
+
+        private static void DoTask2()
         {
             int upperLeftX;
             int upperLeftY;
@@ -98,16 +102,19 @@ namespace Menu
                 Console.WriteLine("Invalid input;");
                 return;
             }
+
             if (!Training1.Validation.ValidateRectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY))
             {
                 Console.WriteLine("Invalid data");
                 return;
             }
+
             var rectangle = new Training1.Task2.Rectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY);
             Console.WriteLine($"The perimeter of regtangle {rectangle.Perimeter}");
             Console.WriteLine($"The area of regtangle {rectangle.Area}");
         }
-        static private void DoTask3()
+
+        private static void DoTask3()
         {
             double radius;
             Console.WriteLine("Enter radius of circle:");
@@ -116,16 +123,19 @@ namespace Menu
                 Console.WriteLine("Invalid input");
                 return;
             }
+
             if (!Training1.Validation.ValidateCircle(radius))
             {
                 Console.WriteLine("Invalid data");
                 return;
             }
+
             var circle1 = new Training1.Task3.Circle(radius);
             Console.WriteLine($"The Circumference of circle is {circle1.Circumference}");
             Console.WriteLine($"The Area of circle is {circle1.Area}");
         }
-        static private void DoTask4()
+
+        private static void DoTask4()
         {
             int upperLeftX;
             int upperLeftY;
@@ -147,15 +157,17 @@ namespace Menu
                 Console.WriteLine("Invalid input;");
                 return;
             }
+
             if (!Training1.Validation.ValidateRectangle(upperLeftX, upperLeftY, lowerRightX, lowerRightY))
             {
                 Console.WriteLine("Invalid data");
                 return;
             }
+
             Console.WriteLine("The perimeter of rectangle is: " +
-                $"{Training1.Task4.Regtangle.Perimeter(upperLeftX, upperLeftY, lowerRightX, lowerRightY)}");
+                $"{Training1.Task4.Rectangle.Perimeter(upperLeftX, upperLeftY, lowerRightX, lowerRightY)}");
             Console.WriteLine("The area of rectangle is: " +
-                $"{Training1.Task4.Regtangle.Area(upperLeftX, upperLeftY, lowerRightX, lowerRightY)}");
+                $"{Training1.Task4.Rectangle.Area(upperLeftX, upperLeftY, lowerRightX, lowerRightY)}");
 
             double radius;
             Console.WriteLine("Enter radius of circle:");
@@ -164,17 +176,20 @@ namespace Menu
                 Console.WriteLine("Invalid input");
                 return;
             }
+
             if (!Training1.Validation.ValidateCircle(radius))
             {
                 Console.WriteLine("Invalid data");
                 return;
             }
+
             Console.WriteLine("The perimeter of rectangle is: " +
                 $"{Training1.Task4.Circle.Circumference(radius)}");
             Console.WriteLine("The area of rectangle is: " +
                 $"{Training1.Task4.Circle.Area(radius)}");
         }
-        static private void DoTask5()
+
+        private static void DoTask5()
         {
             double firstRealNumnber;
             double firstImanginaryNumber;
@@ -196,6 +211,7 @@ namespace Menu
                 Console.WriteLine("Invalid input;");
                 return;
             }
+
             var firstComplexNumber = new Training1.Task5.ComplexNumber(firstRealNumnber, firstImanginaryNumber);
             var secondComplexNumber = new Training1.Task5.ComplexNumber(secondRealNumber, seconImaginaryNumber);
             Training1.Task5.ComplexNumber result = firstComplexNumber * secondComplexNumber;
@@ -203,6 +219,5 @@ namespace Menu
             result = firstComplexNumber / secondComplexNumber;
             Console.WriteLine($"Result of division: {result.ToString()}");
         }
-
     }
 }

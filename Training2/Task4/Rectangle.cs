@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Training2.Task4
 {
-    public class Rectangle: Figure, IDrawable
+    public class Rectangle : Figure, IDrawable
     {
-        public override void Draw() => Console.WriteLine(this.GetType().Name);
         public Rectangle(int x, int y) : base(x, y) { }
+
+        public override void Draw() => Console.WriteLine(this.GetType().Name);
     }
 }

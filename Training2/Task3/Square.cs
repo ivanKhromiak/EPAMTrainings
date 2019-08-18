@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Training2.Task3
 {
-    public class Square: Figure
+    public class Square : Figure
     {
-        public override void Draw() => Console.WriteLine(this.GetType().Name);
         public Square(int x, int y) : base(x, y) { }
+
+        public override void Draw() => Console.WriteLine(this.GetType().Name);
     }
 }

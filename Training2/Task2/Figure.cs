@@ -8,13 +8,16 @@ namespace Training2.Task2
 {
     public abstract class Figure
     {
-        public abstract void Draw();
-        public int X{ get; }
-        public int Y{ get; }
         public Figure(int x, int y)
         {
             X = x;
             Y = y;
         }
+
+        public int X { get; }
+
+        public int Y { get; }
+
+        public abstract void Draw();
     }
 }

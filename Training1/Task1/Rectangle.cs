@@ -8,12 +8,6 @@ namespace Training1.Task1
 {
     public class Rectangle
     {
-        public int Perimeter { get; private set; }
-        public int Area { get; private set; }
-
-        private int CalcPerimeter(int lenght, int width) => (2 * lenght) + (2 * width);
-        private int CalcArea(int lenght, int width) => lenght * width;
-
         public Rectangle(int leftUpperX, int leftUpperY, int rightLowerX, int rightLowerY)
         {
             int length = rightLowerX - leftUpperX;
@@ -21,5 +15,13 @@ namespace Training1.Task1
             Perimeter = CalcPerimeter(length, width);
             Area = CalcArea(length, width);
         }
+
+        public int Perimeter { get; private set; }
+
+        public int Area { get; private set; }
+
+        private int CalcPerimeter(int lenght, int width) => (2 * lenght) + (2 * width);
+
+        private int CalcArea(int lenght, int width) => lenght * width;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Training2.Task1
 {
-    public class Rectangle: Figure
+    public class Rectangle : Figure
     {
         public override void Draw() => Console.WriteLine(this.GetType().Name);
     }

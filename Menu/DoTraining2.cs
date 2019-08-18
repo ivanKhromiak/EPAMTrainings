@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Menu
 {
-    static class DoTraining2
+    internal static class DoTraining2
     {
-        static public void ChooseTask()
+        public static void ChooseTask()
         {
             int choice;
             while (true)
@@ -19,6 +19,7 @@ namespace Menu
                     Console.WriteLine("Invalid input, try again");
                     continue;
                 }
+
                 switch (choice)
                 {
                     case 1:
@@ -42,14 +43,15 @@ namespace Menu
             }
         }
 
-        static private void DoTask1()
+        private static void DoTask1()
         {
             var rectangle = new Training2.Task1.Rectangle();
             rectangle.Draw();
             var square = new Training2.Task1.Square();
             square.Draw();
         }
-        static private void DoTask2()
+
+        private static void DoTask2()
         {
             var regtangle = new Training2.Task2.Rectangle(22, 20);
             var square = new Training2.Task2.Square(1, 4);
@@ -60,7 +62,8 @@ namespace Menu
             Console.WriteLine($"Y of square is {square.Y}");
             square.Draw();
         }
-        static private void DoTask3()
+
+        private static void DoTask3()
         {
             var figure = new Training2.Task3.Figure(5, 10);
             var rectangle = new Training2.Task3.Rectangle(4, 9);
@@ -69,7 +72,8 @@ namespace Menu
             rectangle.Draw();
             square.Draw();
         }
-        static private void DoTask4()
+
+        private static void DoTask4()
         {
             var figure = new Training2.Task4.Figure(5, 10);
             var rectangle = new Training2.Task4.Rectangle(4, 9);

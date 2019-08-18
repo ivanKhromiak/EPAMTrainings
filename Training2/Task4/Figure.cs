@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace Training2.Task4
 {
-    public class Figure: IDrawable
+    public class Figure : IDrawable
     {
-        static public void DrawAll(params IDrawable[] array)
+        public Figure(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public int X { get; }
+
+        public int Y { get; }
+
+        public static void DrawAll(params IDrawable[] array)
         {
             foreach (var item in array)
             {
@@ -17,12 +27,5 @@ namespace Training2.Task4
         }
 
         public virtual void Draw() => Console.WriteLine(this.GetType().Name);
-        public int X { get; }
-        public int Y { get; }
-        public Figure(int x, int y)
-        {
-            X = x;
-            Y = y;
-        }
     }
 }

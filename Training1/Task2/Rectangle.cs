@@ -11,19 +11,20 @@ namespace Training1.Task2
         private int length;
         private int width;
 
-        public int Perimeter
-        {
-            get { return (2 * length) + (2 * width); }
-        }
-        public int Area
-        {
-            get { return length * width; }
-        }
-
         public Rectangle(int leftUpperX, int leftUpperY, int rightLowerX, int rightLowerY)
         {
             length = rightLowerX - leftUpperX;
             width = leftUpperY - rightLowerY;
+        }
+
+        public int Perimeter
+        {
+            get { return (2 * length) + (2 * width); }
+        }
+
+        public int Area
+        {
+            get { return length * width; }
         }
     }
 }

@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace Menu
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        internal static void Main(string[] args)
         {
             int choice;
             while (true)
             {
                 Console.WriteLine("Enter the number of training you want to test or zero to exit:");
-                if(!int.TryParse(Console.ReadLine(), out choice))
+                if (!int.TryParse(Console.ReadLine(), out choice))
                 {
                     Console.WriteLine("Invalid input, try agian");
                     continue;
                 }
+
                 switch (choice)
                 {
                     case 1:
