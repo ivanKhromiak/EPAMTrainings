@@ -28,6 +28,9 @@ namespace Menu
                     case 2:
                         DoTraining2.ChooseTask();
                         break;
+                    case 3:
+                        DoTraining3.ChooseTask();
+                        break;
                     case 0:
                         return;
                     default:
