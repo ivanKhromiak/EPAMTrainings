@@ -8,25 +8,19 @@ namespace Training3
 {
     public class Task3
     {
-        public static List<string> GenerateList()
+        public static string GenerateString(Random random)
         {
-            var list = new List<string>();
-            Random random = new Random();
             const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            for (int i = 0; i < 101; i++)
+            string result = "";
+            for (int j = 0; j < 4; j++)
             {
-                string result = "";
-                for (int j = 0; j < 4; j++)
-                {
-                    result += alphabet[random.Next(0, alphabet.Length)];
-                }
-                list.Add(result);
+                result += alphabet[random.Next(0, alphabet.Length)];
             }
 
-            return list;
+            return result;
         }
 
-        public static void DeleteSame(ref List<string >ListOfStrings)
+        public static void DeleteSameInSortedList(ref List<string >ListOfStrings)
         {
             for (int i = 0; i < ListOfStrings.Count - 1; i++)
             {
@@ -35,6 +29,7 @@ namespace Training3
                     if (ListOfStrings[i] == ListOfStrings[j])
                     {
                         ListOfStrings.RemoveAt(j);
+                        j--;
                     }
                 }
             }
@@ -47,6 +42,7 @@ namespace Training3
                 if (ListOfStrings[i].StartsWith("Z"))
                 {
                     ListOfStrings.RemoveAt(i);
+                    i--;
                 }
             }
         }

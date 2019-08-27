@@ -46,6 +46,7 @@ namespace Menu
             {
                 Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
             }
+
             Task2.AddRangePersons(ref persons);
             foreach (var person in persons)
             {
@@ -54,17 +55,24 @@ namespace Menu
                 {
                     Console.Write(number + "  ");
                 }
+
                 Console.WriteLine();
             }
         }
 
         private static void DoTask3()
         {
-            List<string> list = Task3.GenerateList();
+            var list = new List<string>();
+            var random = new Random();
+            for (int i = 0; i < 101; i++)
+            {
+                list.Add(Task3.GenerateString(random));
+            }
+
             Console.WriteLine("Amount before changes: " + list.Count);
-            Task3.DeleteSame(ref list);
-            Task3.DeleteStartsWithZ(ref list);
             Task3.Sort(ref list);
+            Task3.DeleteSameInSortedList(ref list);
+            Task3.DeleteStartsWithZ(ref list);
             Console.WriteLine("Amount after changes: " + list.Count);
             Console.WriteLine("Enter number of page:");
             int page;
@@ -72,6 +80,7 @@ namespace Menu
             {
                 Environment.Exit(0);
             }
+
             Task3.DisplayPage(ref list, page);
         }
     }
